@@ -1,0 +1,134 @@
+@charset 'UTF-8';
+
+$font-size:37.5px !default;
+
+@function rem($px){
+    @return $px/$font-size*1rem;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+%quanju{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    padding:0;
+    margin:0;
+    list-style:none;
+    outline: none;
+    text-decoration:none;
+    box-sizing: border-box;
+    font-size: rem(16px);
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    header{
+        width: 100%;
+        height: 0;
+    }
+
+    main{
+        width: 100%;
+        flex:1;
+        overflow-y: scroll;
+        background-image: url('../images/1.png');
+
+        section{
+            width: 100%;
+            
+            .main-img{
+                width: 100px;
+                margin:0 auto;
+                margin-top: 150px;
+                
+                img{
+                    width: 100%;
+                }
+            }
+
+            .main-inp{
+                width: 80%;
+                height: 45px;
+                text-align: center;
+                line-height: 45px;
+                border-radius: 20px;
+                border:1px solid Red;
+                margin:0 auto;
+                margin-top: 35px;
+                color:red;
+            }
+
+            .main-der{
+                width: 80%;
+                height: 45px;
+                text-align: center;
+                line-height: 45px;
+                border-radius: 20px;
+                border:1px solid Red;
+                margin:0 auto;
+                color:red;
+                margin-top: 20px;
+            }
+
+            a{
+                color:black;
+                width: 100%;
+                text-align: center;
+                height: 100px;
+                display: inline-block;
+                margin-top: 20px;
+                font-size: rem(13px);
+            }
+
+            .a{
+                color:black;
+                width: 100%;
+                text-align: center;
+                height: auto;
+                display: inline-block;
+                margin-top: 100px;
+                font-size: rem(13px);
+            }
+
+            .main-content{
+                width: 100%;
+                height: auto;
+                display: flex;
+                margin-top: 20px;
+                @extend %quanju;
+
+                div{
+                    flex:1;
+                    display: flex;
+                    flex-direction: column;
+                    @extend %quanju;
+
+                    .icon{
+                        font-size: 30px;
+                    }
+
+                    .zi{
+                        color:#999;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    footer{
+        width: 100%;
+        height: 0;
+    }
+}
